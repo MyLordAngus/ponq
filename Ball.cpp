@@ -4,6 +4,7 @@
 #include <QPainter>
 
 #define CIRCLE_RADIUS 15
+#define SPEED 1
 #define PI 3.14159265
 
 Ball::Ball()
@@ -34,7 +35,7 @@ void Ball::advance(int phase)
     //setRotation(rotation() + dx);
     //setPos(mapToParent(0, 1));
     
-    setX(x() + ::cos(angle));
-    setY(y() + ::sin(angle));
+    setX(x() + ::cos(angle) * SPEED);
+    setY(y() + ::sin(angle) * SPEED);
     setPos(x(), y());
 }
