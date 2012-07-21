@@ -8,9 +8,8 @@
 #define PI 3.14159265
 
 Ball::Ball()
-    : angle(-45)
+    : angle(315)
 {
-    setRotation(0);
 }
 
 QRectF Ball::boundingRect() const
@@ -30,12 +29,12 @@ void Ball::advance(int phase)
     if(!phase)
         return;
 
-    //qreal dx = ::sin(angle);
-
-    //setRotation(rotation() + dx);
-    //setPos(mapToParent(0, 1));
-    
-    setX(x() + ::cos(angle) * SPEED);
-    setY(y() + ::sin(angle) * SPEED);
-    setPos(x(), y());
+    QPointF scene_pos = scenePos();
+    if(scene_pos.x() > 200 || scene_pos.x() < -200 
+            || scene_pos.y() < -200 || scene_pos.y() > 200)
+    {
+        angle -= 90;
+        setRotation(angle);
+    }
+    setPos(mapToParent(0, 2));
 }
