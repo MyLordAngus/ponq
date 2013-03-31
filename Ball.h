@@ -8,14 +8,14 @@ class QWidget;
 class Ball : public QGraphicsItem
 {
 public:
-    Ball();
+	Ball();
 
-    QRectF boundingRect() const;
-    void paint(QPainter* painter,
-                const QStyleOptionGraphicsItem* option,
-                QWidget* widget = 0);
-    void advance(int phase);
+	QRectF boundingRect() const;
+	void paint(QPainter* painter,
+			const QStyleOptionGraphicsItem* option,
+			QWidget* widget = 0);
+	void advance(int phase);
 
 private:
-    qreal angle;
+	qreal angle;
 };
