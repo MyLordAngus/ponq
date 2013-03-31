@@ -1,6 +1,6 @@
 # Compiler
 CXX := g++
-CXXFLAGS := -g -Wall -pedantic
+CXXFLAGS := -g -Wall -pedantic -std=c++0x
 
 # Include path
 INCPATHS = `pkg-config --cflags QtCore QtGui`
